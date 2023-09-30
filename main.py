@@ -11,6 +11,7 @@ screen.bgcolor("black")
 screen.title("My Snake Game")
 screen.tracer(0)
 
+
 snake = snake.Snake()
 food = Food()
 scoreboard = ScoreBoard()
@@ -22,6 +23,7 @@ screen.onkey(snake.up,"Up")
 screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
+
 
 game_on = True
 while game_on:
@@ -41,10 +43,13 @@ while game_on:
         game_on = False
         scoreboard.clear()
         scoreboard.game_over()
+        scoreboard.update_high_score()
 
     # Detect collision with tail
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
             game_on = False
             scoreboard.game_over()
+            scoreboard.update_high_score()
+
 screen.exitonclick()

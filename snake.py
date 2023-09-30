@@ -27,6 +27,17 @@ class Snake:
         new_segment.goto(position)
         self.segments.append(new_segment)
 
+    # # Player picks color of their snake
+    # def color_pick(self):
+    #     valid_colors = {1: "red", 2: "blue", 3: "orange", 4: "green"}
+    #     while True:
+    #         try:
+    #             self.color_chosen = int(input("What color would you like to make your turtle? Type '1' for red, '2' for blue, '3' for orange, and '4' for green."))
+    #             color = valid_colors[self.color_chosen]
+    #             return color
+    #         except KeyError:
+    #             print("Invalid input. Please enter a valid number (1, 2, 3, or 4).")
+
     # Add segments to the snake
     def extend(self):
         self.add_segment(self.segments[-1].position())
